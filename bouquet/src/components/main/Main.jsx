@@ -1,26 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { withTheme } from "styled-components";
+import Background from "../background/Background";
 
 const Main = () => {
   return (
     <Wrapper>
-      <Bubble />
-      <Bubble1 />
-      <Bubble2 />
-      <Bubble3 />
-      <Bubble4 />
       <Header>
-        <HeaderText>
-          <Flex>
-            <Link to="/login">
-              <p className="login">로그인</p>
-            </Link>
-            <Link to="/signUp">
-              <p className="signUp">회원가입</p>
-            </Link>
-          </Flex>
-        </HeaderText>
+        <Background />
         <InputWrapper>
           <Flex>
             <p className="first">꽃다발을</p>
@@ -43,61 +30,6 @@ const Main = () => {
   );
 };
 
-const Bubble = styled.div`
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  left: -280px;
-  top: 400px;
-  border-radius: 50%;
-  background: rgba(215, 97, 153, 0.03);
-  position: fixed; // 스크롤 없애고 요소 고정
-`;
-
-const Bubble1 = styled.div`
-  position: absolute;
-  width: 480px;
-  height: 480px;
-  left: -180px;
-  top: 160px;
-  border-radius: 50%;
-  background: rgba(215, 97, 153, 0.03);
-  position: fixed; // 스크롤 없애고 요소 고정
-`;
-
-const Bubble2 = styled.div`
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  left: 200px;
-  top: 280px;
-  border-radius: 50%;
-  background: rgba(215, 97, 153, 0.03);
-  position: fixed; // 스크롤 없애고 요소 고정
-`;
-
-const Bubble3 = styled.div`
-  position: absolute;
-  width: 850px;
-  height: 850px;
-  left: 900px;
-  top: 330px;
-  border-radius: 50%;
-  background: rgba(215, 97, 153, 0.03);
-  position: fixed; // 스크롤 없애고 요소 고정
-`;
-
-const Bubble4 = styled.div`
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  left: 1130px;
-  top: 80px;
-  border-radius: 50%;
-  background: rgba(215, 97, 153, 0.03);
-  position: fixed; // 스크롤 없애고 요소 고정
-`;
-
 const GiftFlowerButton = styled.button`
   margin-top: 45px;
   width: 270px;
@@ -110,26 +42,10 @@ const GiftFlowerButton = styled.button`
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
 `;
 
-const HeaderText = styled.div`
-  display: flex;
-  justify-content: right;
-  margin-right: 50px;
-  letter-spacing: 0.5px;
-  .login {
-    color: #e29393;
-    text-decoration: none;
-  }
-  .signUp {
-    margin-left: 30px;
-    color: #e29393;
-  }
-`;
-
 const Header = styled.div`
   width: 100%;
   height: 6vh;
   background: #f6f3f4;
-  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
   .makeMyBouquet {
     margin-top: 23px;
@@ -154,7 +70,7 @@ const Wrapper = styled.div`
 `;
 
 const InputWrapper = styled.div`
-  margin-top: 40px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   .first {
