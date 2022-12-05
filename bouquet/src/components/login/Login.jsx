@@ -1,9 +1,33 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import styled, { withTheme } from "styled-components";
+import styled from "styled-components";
 import Background from "../background/Background";
 
 const Login = () => {
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
+  const submitButtonRef = useRef();
+
+  const onIdChange = (e) => {
+    setId(e.target.value);
+  };
+
+  useEffect(() => {
+    changeButtonColor();
+  }, [id, pw]);
+
+  const onPwChange = (e) => {
+    setPw(e.target.value);
+  };
+
+  const changeButtonColor = () => {
+    if (id !== "" && pw !== "") {
+      submitButtonRef.current.style.backgroundColor = "#fc8da7";
+    } else {
+      submitButtonRef.current.style.backgroundColor = "#d9d9d9";
+    }
+  };
+
   return (
     <Fragment>
       <Background />
@@ -13,9 +37,25 @@ const Login = () => {
             <Flex>
               <p className="LOGIN">로그인</p>
             </Flex>
-            <AuthInput id="id" type="text" placeholder="아이디" />
-            <AuthInput id="pw" type="password" placeholder="비밀번호" />
-            <AuthButton>로그인</AuthButton>
+            <AuthInput
+              id="id"
+              type="text"
+              placeholder="아이디"
+              value={id}
+              onChange={onIdChange}
+            />
+            <AuthInput
+              id="pw"
+              type="password"
+              placeholder="비밀번호"
+              value={pw}
+              onChange={onPwChange}
+            />
+            <AuthButton ref={submitButtonRef}>로그인</AuthButton>
+            <p className="NoID">아이디가 없으신가요?</p>
+            <Link to="/signUp">
+              <GoSignUp>회원가입 하기</GoSignUp>
+            </Link>
           </LoginBox>
           <CopyRight>© 2022. 할미꽃 All rights reserved.</CopyRight>
         </Flex>
@@ -24,13 +64,20 @@ const Login = () => {
   );
 };
 
+const GoSignUp = styled.div`
+  font-size: 10pt;
+  text-decoration: underline;
+  color: #FC8DA7;
+  margin-top: -10px;
+`;
+
 const AuthButton = styled.button`
   margin-top: 70px;
   width: 400px;
   height: 55px;
   border: none;
   border-radius: 40px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   /* background-color: #fc8da7;    인풋박스에 글자가 써질 때 버튼에 색 넣기*/
   font-size: 12pt;
   color: white;
@@ -79,6 +126,11 @@ const LoginBox = styled.div`
     font-weight: 400;
     font-family: "Noto Sans KR";
     color: #e29393;
+  }
+  .NoID {
+    margin-top: 35px;
+    font-size: 10pt;
+    color: #9E9E9E;
   }
 `;
 

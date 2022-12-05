@@ -1,9 +1,38 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled, { withTheme } from "styled-components";
 import Background from "../background/Background";
 
 const SignUp = () => {
+  const [id, setId] = useState("");
+  const [email, setEmail] = useState("");
+  const [pw, setPw] = useState("");
+  const submitButtonRef = useRef();
+
+  const onIdChange = (e) => {
+    setId(e.target.value);
+  };
+
+  const onEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const onPwChange = (e) => {
+    setPw(e.target.value);
+  };
+
+  useEffect(() => {
+    changeButtonColor();
+  }, [id, email, pw]);
+
+  const changeButtonColor = () => {
+    if (id !== "" && email !== "" && pw !== "") {
+      submitButtonRef.current.style.backgroundColor = "#fc8da7";
+    } else {
+      submitButtonRef.current.style.backgroundColor = "#d9d9d9";
+    }
+  };
+
   return (
     <Fragment>
       <Background />
@@ -12,10 +41,32 @@ const SignUp = () => {
           <Flex>
             <p className="SIGNUP">회원가입</p>
           </Flex>
-          <AuthInput id="id" type="text" placeholder="아이디" />
-          <AuthInput id="email" type="text" placeholder="이메일" />
-          <AuthInput id="password" type="password" placeholder="비밀번호" />
-          <AuthButton>회원가입</AuthButton>
+          <AuthInput
+            id="id"
+            type="text"
+            placeholder="아이디"
+            value={id}
+            onChange={onIdChange}
+          />
+          <AuthInput
+            id="email"
+            type="text"
+            placeholder="이메일"
+            value={email}
+            onChange={onEmailChange}
+          />
+          <AuthInput
+            id="password"
+            type="password"
+            placeholder="비밀번호"
+            value={pw}
+            onChange={onPwChange}
+          />
+          <AuthButton ref={submitButtonRef}>회원가입</AuthButton>
+          <p className="haveID">이미 아이디가 있으신가요?</p>
+          <Link to="/login">
+            <GoLogin>로그인 하기</GoLogin>
+          </Link>
         </LoginBox>
         <CopyRight>© 2022. 할미꽃 All rights reserved.</CopyRight>
       </Flex>
@@ -23,13 +74,20 @@ const SignUp = () => {
   );
 };
 
+const GoLogin = styled.div`
+  margin-top: -10px;
+  font-size: 10pt;
+  color: #fc8da7;
+  text-decoration: underline;
+`;
+
 const AuthButton = styled.button`
-  margin-top: 70px;
+  margin-top: 50px;
   width: 400px;
   height: 55px;
   border: none;
   border-radius: 40px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   /* background-color: #fc8da7;    인풋박스에 글자가 써질 때 버튼에 색 넣기*/
   font-size: 12pt;
   color: white;
@@ -77,6 +135,11 @@ const LoginBox = styled.div`
     font-weight: 400;
     font-family: "Noto Sans KR";
     color: #e29393;
+  }
+  .haveID {
+    margin-top: 20px;
+    font-size: 10pt;
+    color: #9E9E9E;
   }
 `;
 
