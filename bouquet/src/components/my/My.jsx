@@ -3,30 +3,39 @@ import { Link } from "react-router-dom";
 import styled, { withTheme } from "styled-components";
 import Background from "../background/Background";
 
-const Main = () => {
+const My = () => {
   return (
     <Wrapper>
       <Header>
         <Background />
         <InputWrapper>
           <Flex>
-            <p className="first">꽃다발을</p>
-            <p className="second">예쁘게 장식해주세요</p>
+            <p className="second">님의 꽃다발을 채워주세요</p>
           </Flex>
           <Flex>
-            <Bouquet src="./assets/images/bouquet.svg" alt="bouquet" />
+            <EmptyBouquet
+              src="./assets/images/emptyBouquet.svg"
+              alt="emptyBouquet"
+            />
           </Flex>
         </InputWrapper>
         <Flex>
-          <Link to="/login">
-            <GiftFlowerButton>내 꽃다발 만들러 가기</GiftFlowerButton>
+          <Link to="/giveFlower">
+            <GiftFlowerButton>꾸미러 가기</GiftFlowerButton>
           </Link>
-          
         </Flex>
+        <CopyRight>© 2022. 할미꽃 All rights reserved.</CopyRight>
       </Header>
     </Wrapper>
   );
 };
+
+const CopyRight = styled.div`
+  margin-top: 35.5px;
+  text-align: center;
+  color: #9e9e9e;
+  font-size: 5pt;
+`;
 
 const GiftFlowerButton = styled.button`
   margin-top: 45px;
@@ -45,9 +54,18 @@ const Header = styled.div`
   height: 6vh;
   background: #f6f3f4;
   position: fixed;
+  .makeMyBouquet {
+    margin-top: 23px;
+    text-align: center;
+    font-style: normal;
+    font-size: 9pt;
+    color: #c1c3ca;
+    font-weight: 500;
+    text-decoration-line: underline;
+  }
 `;
 
-const Bouquet = styled.img`
+const EmptyBouquet = styled.img`
   margin-top: 10px;
   width: 300px;
   object-fit: contain;
@@ -86,39 +104,4 @@ const Flex = styled.div`
   justify-content: center;
 `;
 
-export default Main;
-
-// const bubbles = () => {
-//   const bubbleSize = [
-//     {
-//       bubbleWH: 700,
-//       bubbleLeftMargin: -280,
-//       bubbleTopMargin: 400
-//     },
-//     {
-//       bubbleWH: 500,
-//       bubbleLeftMargin: -400,
-//       bubbleTopMargin: 200,
-//     },
-//     {
-//       bubbleWH: 200,
-//       bubbleLeftMargin: -400,
-//       bubbleTopMargin: 200,
-//     },
-//     {
-//       bubbleWH: 700,
-//       bubbleLeftMargin: 400,
-//       bubbleTopMargin: 200,
-//     },
-//     {
-//       bubbleWH: 900,
-//       bubbleLeftMargin: 200,
-//       bubbleTopMargin: 200,
-//     }
-//   ];
-// }
-
-// const bubble = [700, 500, 200, 700, 900];
-// const listItems = bubble.map((bubble, idx) => {
-//   console.log(bubble);
-// });
+export default My;

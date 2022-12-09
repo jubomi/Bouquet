@@ -82,9 +82,9 @@ const GoLogin = styled.div`
 `;
 
 const AuthButton = styled.button`
-  margin-top: 50px;
+  margin-top: 40px;
   width: 400px;
-  height: 55px;
+  height: 45px;
   border: none;
   border-radius: 40px;
   background-color: #d9d9d9;
@@ -97,15 +97,15 @@ const AuthButton = styled.button`
 const AuthInput = styled.input`
   width: 380px;
   height: 45px;
-  padding: 5px 0px 5px 30px;
+  padding-left: 30px;
   border-radius: 50px;
   background-color: #f8f8f8;
-  margin-top: 20px;
+  margin-top: 15px;
   border: none;
   outline: none;
   ::placeholder {
     font-family: "Noto Sans KR";
-    font-size: 12pt;
+    font-size: 10pt;
     font-weight: 550;
     color: #c1c3ca;
   }
@@ -122,15 +122,15 @@ const LoginBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 145px;
-  width: 590px;
-  height: 520px;
+  margin-top: 170px;
+  width: 530px;
+  height: 450px;
   background: #ffffff;
   border-radius: 30px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   position: fixed;
   .SIGNUP {
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 22pt;
     font-weight: 400;
     font-family: "Noto Sans KR";
@@ -139,7 +139,7 @@ const LoginBox = styled.div`
   .haveID {
     margin-top: 20px;
     font-size: 10pt;
-    color: #9E9E9E;
+    color: #9e9e9e;
   }
 `;
 
