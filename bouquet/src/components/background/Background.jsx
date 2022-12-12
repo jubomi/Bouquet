@@ -10,7 +10,6 @@ const Background = () => {
       <Bubble2 />
       <Bubble3 />
       <Bubble4 />
-
       <Header>
         <HeaderText>
           <Flex>
@@ -24,24 +23,15 @@ const Background = () => {
               <Link to="/signUp">
                 <p className="signUp">회원가입</p>
               </Link>
-
             </HeaderRight>
           </Flex>
         </HeaderText>
       </Header>
-      <CopyRight>© 2022. 할미꽃 All rights reserved.</CopyRight>
     </Wrapper>
     
   );
 };
 
-
-const CopyRight = styled.div`
-margin-bottom: 10px;
-  text-align: center;
-  color: #9e9e9e;
-  font-size: 5pt;
-`;
 const B_Logo = styled.img`
   color: #fdbdd3;
   margin-left: 20px;

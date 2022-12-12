@@ -95,8 +95,8 @@ const AuthInput = styled.input`
   outline: none;
   ::placeholder {
     font-family: "Noto Sans KR";
-    font-size: 10pt;
     font-weight: 550;
+    font-size: 10pt;
     color: #c1c3ca;
   }
 `;
