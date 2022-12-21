@@ -21,7 +21,6 @@ const Main = () => {
           <Link to="/login">
             <GiftFlowerButton>내 꽃다발 만들러 가기</GiftFlowerButton>
           </Link>
-          
         </Flex>
       </Header>
     </Wrapper>

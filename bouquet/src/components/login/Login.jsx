@@ -57,7 +57,6 @@ const Login = () => {
               <GoSignUp>회원가입 하기</GoSignUp>
             </Link>
           </LoginBox>
-          <CopyRight>© 2022. 할미꽃 All rights reserved.</CopyRight>
         </Flex>
       </Wrapper>
     </Fragment>
@@ -99,13 +98,6 @@ const AuthInput = styled.input`
     font-size: 10pt;
     color: #c1c3ca;
   }
-`;
-
-const CopyRight = styled.div`
-  margin-top: 765px;
-  text-align: center;
-  color: #9e9e9e;
-  font-size: 5pt;
 `;
 
 const LoginBox = styled.div`

@@ -4,13 +4,7 @@ import LoginPage from "./pages/login/LoginPage";
 import SignUpPage from "./pages/signUp/SignUpPage";
 import ChooseFlowerPage from "./pages/chooseFlower/ChooseFlowerPage";
 import MyPage from "./pages/my/MyPage";
-
-// import MeetingPage from "./pages/meeting/MeetingPage";
-// import HomeWorkingPage from "./pages/homeWorking/HomeWorkingPage";
-// import HomeApprovalPage from "./pages/homeWorking/HomeApprovalPage";
-// import HomeReportPage from "./pages/homeWorking/HomeReportPage";
-// import AdminVacationPage from "./pages/Vacation/AdminVacationPage";
-// import SignUpPage from "./pages/signUp/SignUpPage";
+import LetterPage from "./pages/letter/LetterPage";
 
 const Router = () => {
   return (
@@ -21,13 +15,7 @@ const Router = () => {
         <Route path="/signUp" element={<SignUpPage />} />
         <Route path="/chooseFlower" element={<ChooseFlowerPage />} />
         <Route path="/my" element={<MyPage />} />
-
-        {/* <Route path="/meeting" element={<MeetingPage />} />
-        <Route path="/admin-homeworking" element={<HomeWorkingPage />} />
-        <Route path="/homeapproval/:id" element={<HomeApprovalPage />} />
-        <Route path="/homereport/:id" element={<HomeReportPage />} />
-        <Route path="/admin-vacation" element={<AdminVacationPage />} />
-        <Route path="/signUp" element={<SignUpPage />} /> */}
+        <Route path="/letter" element={<LetterPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,36 +1,45 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import styled, { withTheme } from "styled-components";
 
 const Background = () => {
   return (
-    <Wrapper>
-      <Bubble />
-      <Bubble1 />
-      <Bubble2 />
-      <Bubble3 />
-      <Bubble4 />
-      <Header>
-        <HeaderText>
-          <Flex>
-            <Link to="/main">
-              <B_Logo src="./assets/images/b_logo.svg" />
-            </Link>
-            <HeaderRight>
-              <Link to="/login">
-                <p className="login">로그인</p>
+    <Fragment>
+      <Wrapper>
+        <Bubble />
+        <Bubble1 />
+        <Bubble2 />
+        <Bubble3 />
+        <Bubble4 />
+        <Header>
+          <HeaderText>
+            <Flex>
+              <Link to="/main">
+                <B_Logo src="./assets/images/b_logo.svg" />
               </Link>
-              <Link to="/signUp">
-                <p className="signUp">회원가입</p>
-              </Link>
-            </HeaderRight>
-          </Flex>
-        </HeaderText>
-      </Header>
-    </Wrapper>
-    
+              <HeaderRight>
+                <Link to="/login">
+                  <p className="login">로그인</p>
+                </Link>
+                <Link to="/signUp">
+                  <p className="signUp">회원가입</p>
+                </Link>
+              </HeaderRight>
+            </Flex>
+          </HeaderText>
+          <CopyRight>© 2022. 할미꽃 All rights reserved.</CopyRight>
+        </Header>
+      </Wrapper>
+    </Fragment>
   );
 };
+
+const CopyRight = styled.div`
+  margin-top: 715px;
+  text-align: center;
+  color: #9e9e9e;
+  font-size: 5pt;
+`;
 
 const B_Logo = styled.img`
   color: #fdbdd3;
