@@ -4,21 +4,21 @@ import styled, { withTheme } from "styled-components";
 import Background from "../background/Background";
 
 const ChooseFlower = () => {
-//   const flowers = [
-//     "blueStar",
-//     "sunFlower",
-//     "pinkFlower",
-//     "cosmos",
-//     "lavenderFlower",
-//     "tulip",
-//   ];
-//   const flowerList = flowers.map((flower, item) => {
-//     console.log(flower);
-//   });
+  //   const flowers = [
+  //     "blueStar",
+  //     "sunFlower",
+  //     "pinkFlower",
+  //     "cosmos",
+  //     "lavenderFlower",
+  //     "tulip",
+  //   ];
+  //   const flowerList = flowers.map((flower, item) => {
+  //     console.log(flower);
+  //   });
 
   const onChooseFlower = (e) => {
     console.log(`clicked, ${e}`);
-};
+  };
 
   return (
     <Fragment>
@@ -28,24 +28,26 @@ const ChooseFlower = () => {
       </Flex>
       <ImgBox>
         <Flex>
-          <img
-            onClick={() => onChooseFlower("blueStar")}
-            className="blueStar"
-            src="./assets/images/blueStar.svg"
-            alt="blueStar"
-          />
-          <img
-            onClick={() => onChooseFlower("sunFlower")}
-            className="sunFlower"
-            src="./assets/images/sunFlower.svg"
-            alt="sunFlower"
-          />
-          <img
-            onClick={() => onChooseFlower("pinkFlower")}
-            className="pinkFlower"
-            src="./assets/images/pinkFlower.svg"
-            alt="pinkFlower"
-          />
+          <Link to="/letter">
+            <img
+              onClick={() => onChooseFlower("blueStar")}
+              className="blueStar"
+              src="./assets/images/blueStar.svg"
+              alt="blueStar"
+            />
+            <img
+              onClick={() => onChooseFlower("sunFlower")}
+              className="sunFlower"
+              src="./assets/images/sunFlower.svg"
+              alt="sunFlower"
+            />
+            <img
+              onClick={() => onChooseFlower("pinkFlower")}
+              className="pinkFlower"
+              src="./assets/images/pinkFlower.svg"
+              alt="pinkFlower"
+            />
+          </Link>
         </Flex>
         <Flex>
           <img
